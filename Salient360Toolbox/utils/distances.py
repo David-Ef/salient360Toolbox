@@ -74,7 +74,7 @@ def mean_dist_angle_topoint(vecs1, vec2):
 def dist_angle_arrays_signed(vecs1, vecs2):
 	# Signed distance computed pair-wise between two arrays of unit vectors
 
-	assertC(vecs1.shape[1] == 2, "[utils.distances.dist_angle_vectors_signed] Takes as input 2-dimensional data (e.g., equirectangular or mercactor projections")
+	assertC(vecs1.shape[1] == 2, "[utils.distances.dist_angle_vectors_signed] Takes as input 2-dimensional data (e.g., equirectangular or mercactor projections).")
 
 	cross = np.cross(vecs1, vecs2)
 	dot = np.einsum("ji,ji->j", vecs1, vecs2)
