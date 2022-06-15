@@ -21,6 +21,7 @@ It has since been improved several times.
 
 The toolbox contains a significant [helper](Salient360Toolbox/helper.py) script to simplify your task.
 
+TODO: list Outputs, list/define computed scanpath features, list/describe comparison algo (saliency & scanpath)
 
 ## Usage
 
@@ -160,8 +161,8 @@ Although, I wrote the toolbox alone, it is conceptually the product of discussio
 * Erwan David
 * Jesús Gutiérrez
 * Melissa Le-Hoa Võ
-* Matthieu Perreira Da Silva
 * Patrick Le callet
+* Matthieu Perreira Da Silva
 
 I worked on this project as part of the LS2N (*Laboratory of Digital Sciences of Nantes*, France) and while at the Scene Grammar lab (Frankfurt, Germany) with the following funding by :
 
