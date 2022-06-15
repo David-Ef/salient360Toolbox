@@ -35,24 +35,24 @@ def FindRawFeaturesByHeader(filepath, returnValid=False):
 
 	indices = {}
 
-	indices["ts"] = getColumnIndex(header, ["oculots", "ocutimestamp", "etts", "timestamp", "ts"])
+	indices["ts"] = getColumnIndex(header, ["oculots", "oculotimestamp", "ocutimestamp", "etts", "timestamp", "ts"])
 
-	indices["xRayL"] = getColumnIndex(header, ["leftgazex", "leftgazedirx", "lgazex", "xlgaze", "lefteyedirectionx"])
-	indices["yRayL"] = getColumnIndex(header, ["leftgazey", "leftgazediry", "lgazey", "ylgaze", "lefteyedirectiony"])
-	indices["zRayL"] = getColumnIndex(header, ["leftgazez", "leftgazedirz", "lgazez", "zlgaze", "lefteyedirectionz"])
+	indices["xRayL"] = getColumnIndex(header, ["leftgazex", "leftgazedirx", "lgazex", "xlgaze", "lefteyedirectionx", "leftgazedirectionx"])
+	indices["yRayL"] = getColumnIndex(header, ["leftgazey", "leftgazediry", "lgazey", "ylgaze", "lefteyedirectiony", "leftgazedirectiony"])
+	indices["zRayL"] = getColumnIndex(header, ["leftgazez", "leftgazedirz", "lgazez", "zlgaze", "lefteyedirectionz", "leftgazedirectionz"])
 
-	indices["xRayR"] = getColumnIndex(header, ["rightgazex", "rightgazedirx", "rgazex", "xrgaze", "righteyedirectionx"])
-	indices["yRayR"] = getColumnIndex(header, ["rightgazey", "rightgazediry", "rgazey", "yrgaze", "righteyedirectiony"])
-	indices["zRayR"] = getColumnIndex(header, ["rightgazez", "rightgazedirz", "rgazez", "zrgaze", "righteyedirectionz"])
+	indices["xRayR"] = getColumnIndex(header, ["rightgazex", "rightgazedirx", "rgazex", "xrgaze", "righteyedirectionx", "rightgazedirectionx"])
+	indices["yRayR"] = getColumnIndex(header, ["rightgazey", "rightgazediry", "rgazey", "yrgaze", "righteyedirectiony", "rightgazedirectiony"])
+	indices["zRayR"] = getColumnIndex(header, ["rightgazez", "rightgazedirz", "rgazez", "zrgaze", "righteyedirectionz", "rightgazedirectionz"])
 
-	indices["xRayB"] = getColumnIndex(header, ["bingazex", "bingazedirx", "meangazedirx", "lgazex", "xlgaze", "meangazedirectionx"])
-	indices["yRayB"] = getColumnIndex(header, ["bingazey", "bingazediry", "meangazediry", "lgazey", "ylgaze", "meangazedirectiony"])
-	indices["zRayB"] = getColumnIndex(header, ["bingazez", "bingazedirz", "meangazedirz", "lgazez", "zlgaze", "meangazedirectionz"])
+	indices["xRayB"] = getColumnIndex(header, ["bingazex", "bingazedirx", "meangazedirx", "lgazex", "xlgaze", "meangazedirectionx", "meangazedirectionx"])
+	indices["yRayB"] = getColumnIndex(header, ["bingazey", "bingazediry", "meangazediry", "lgazey", "ylgaze", "meangazedirectiony", "meangazedirectiony"])
+	indices["zRayB"] = getColumnIndex(header, ["bingazez", "bingazedirz", "meangazedirz", "lgazez", "zlgaze", "meangazedirectionz", "meangazedirectionz"])
 
-	indices["xCam"] = getColumnIndex(header, ["xcam", "camx", "headx", "xhead", "camerarotationx"])
-	indices["yCam"] = getColumnIndex(header, ["ycam", "camy", "heady", "yhead", "camerarotationy"])
-	indices["zCam"] = getColumnIndex(header, ["zcam", "camz", "headz", "zhead", "camerarotationz"])
-	indices["wCam"] = getColumnIndex(header, ["wcam", "camw", "headw", "whead", "camerarotationw"])
+	indices["xCam"] = getColumnIndex(header, ["xcam", "camx", "headx", "xhead", "camerarotationx", "cameraquaternionx"])
+	indices["yCam"] = getColumnIndex(header, ["ycam", "camy", "heady", "yhead", "camerarotationy", "cameraquaterniony"])
+	indices["zCam"] = getColumnIndex(header, ["zcam", "camz", "headz", "zhead", "camerarotationz", "cameraquaternionz"])
+	indices["wCam"] = getColumnIndex(header, ["wcam", "camw", "headw", "whead", "camerarotationw", "cameraquaternionw"])
 
 	indices["piCam"] = getColumnIndex(header, ["pitch", "campitch", "pitchcam", "pitchead", "headpitch"])
 	indices["yaCam"] = getColumnIndex(header, ["yaw", "camyaw", "yawcam", "yawhead", "headyaw"])
@@ -206,8 +206,6 @@ def loadRawData(path, eye="R", return_fixlist=True, **kwargs):
 		idx_load += [0, 0, 0] # Will not be used
 
 	kwargs["Euler2Quat"] = Euler2Quat
-
-	# CATCH EROOR: if data was not found in file at path (see "valid")
 
 	"""
 	Feature order:
