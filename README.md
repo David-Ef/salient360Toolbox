@@ -21,6 +21,7 @@ It has since been improved several times.
 
 The toolbox contains a significant [helper](Salient360Toolbox/helper.py) script to simplify your task.
 
+
 ## Usage
 
 There are three way to use the toolbox: via a GUI, scripting, or the command line.
@@ -152,3 +153,20 @@ As an example, I used this pair of scripts to generate videos visualising user b
 You can download an example of such a video [here](/documentation/UserBehaviourExample.mp4).
 
 ## Acknowledgements
+
+Although, I wrote the toolbox alone, it is conceptually the product of discussions and interactions between the following fine folks:
+
+* Antoine Coutrot
+* Erwan David
+* Jesús Gutiérrez
+* Melissa Le-Hoa Võ
+* Matthieu Perreira Da Silva
+* Patrick Le callet
+
+I worked on this project as part of the LS2N (*Laboratory of Digital Sciences of Nantes*, France) and while at the Scene Grammar lab (Frankfurt, Germany) with the following funding by :
+
+* RFI Atlanstic2020.
+* Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) project number 222641018 SFB/TRR 135, subproject C7 to MLV.
+
+Part of the Multimatch implementation was taken from the implementation by [Adina Wagner](https://www.adina-wagner.com/) ([repo](https://github.com/adswa/multimatch_gaze)).
+Thank you to her for her work.
