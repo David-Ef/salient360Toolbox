@@ -120,9 +120,9 @@ def FindFixlistFeaturesByHeader(filepath, returnValid=False):
 		# test if there is enough data to continue
 
 		# Do we have long/lat data?
-		valid = indices["lon"] is None and indices["lat"] is None
+		valid = not (indices["lon"] is None and indices["lat"] is None)
 		# Do we have a 3D direction vector?
-		valid |= indices["x"] is None and indices["y"] is None and indices["z"] is None
+		valid |= not (indices["x"] is None and indices["y"] is None and indices["z"] is None)
 	
 		return indices, valid
 
