@@ -43,7 +43,7 @@ class SineWeightMap():
 		self.height = height
 		self.WMap = np.sin(np.linspace(0, np.pi, self.height))
 		self.WMap = np.repeat(self.WMap[:, None], height*2, axis=1)
-		self.WMap[:] = 1 # Uniform weighting
+		# self.WMap[:] = 1 # Uniform weighting
 
 WeightMap = SineWeightMap()
 
