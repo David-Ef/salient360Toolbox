@@ -13,6 +13,7 @@ It has since been improved several times.
 * [Install](#install)
 * [Limits](#limits)
 * [Extra scripts](#extra-scripts)
+* [Cite](#cite)
 * [Acknowledgements](#acknowledgements)
 
 ## Functionalities
@@ -152,6 +153,10 @@ One script extracts, the other places the extracted view back into an equirectan
 
 As an example, I used this pair of scripts to generate videos visualising user behaviour.
 You can download an example of such a video [here](/documentation/UserBehaviourExample.mp4).
+
+## Cite
+
+* David, E., Gutiérrez, J., Võ, M. L.-H., Coutrot, A., Perreira Da Silva, M., & Le Callet, P. (2023). The Salient360! Toolbox: Processing, Visualising and Comparing Gaze Data in 3D. 2023 Symposium on Eye Tracking Research and Applications. Tubingen, Germany. [https://doi.org/10.1145/3588015.3588406](https://doi.org/10.1145/3588015.3588406
 
 ## Acknowledgements
 
