@@ -130,7 +130,7 @@ pip install opencv-python==4.2.0.32 numpy-quaternion==2020.11.2.17.0.49 PyQt5==5
 ### [Polar plot generator](extra/Polar_plots_generator)
 
 This is the script I use in my papers to generate polar plots of saccade angle data.
-It takes a simple csv file as input with, per line, amplitude and angle.
+It takes a simple csv file as input with, per line: amplitude and angle.
 
 <img src="/extra/Polar_plots_generator/example.png" alt="polar plot output example" width="200"/>
 
@@ -145,7 +145,7 @@ One script extracts, the other places the extracted view back into an equirectan
 * Extracted view:
 <img src="/extra/Viewport_extractor/Viewport.png" alt="Extracted viewport" width="100"/>
 
-* Extracted view back in equirectangular.:
+* Extracted view back in equirectangular:
 <img src="/extra/Viewport_extractor/VPinEquirect.png" alt="Viewport in equirectangular" width="300"/>
 
 *The extracted view is not perfect, it shows slight deformations.*
@@ -169,5 +169,5 @@ I worked on this project as part of the LS2N (*Laboratory of Digital Sciences of
 * RFI Atlanstic2020.
 * Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) project number 222641018 SFB/TRR 135, subproject C7 to MLV.
 
-Part of the Multimatch implementation was taken from the implementation by [Adina Wagner](https://www.adina-wagner.com/) ([repo](https://github.com/adswa/multimatch_gaze)).
+Part of the [Multimatch](https://link.springer.com/article/10.3758/s13428-012-0212-2) implementation was taken from the implementation by [Adina Wagner](https://www.adina-wagner.com/) ([repo](https://github.com/adswa/multimatch_gaze)).
 Thank you to her for her work.
