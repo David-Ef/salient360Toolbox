@@ -3,7 +3,7 @@
 # Author: Erwan DAVID
 # Year: 2018
 # Lab: IPI, LS2N, Nantes, France
-# Comment: Numpy implementations of Saliency maps/videos comparison tools (by Chencan Qian, Sep 2014 [*repo]) and example as main
+# Comment: Numpy implementations of Saliency maps/videos comparison tools (by Chencan Qian, Sep 2014 [*repo]) and example as main - https://github.com/herrlich10/saliency
 # Cite: E. DAVID, J. Guttiérez, A Coutrot, M. Perreira Da Silva, P. Le Callet (2018). A Dataset of Head and Eye Movements for 360° Videos. ACM MMSys18, dataset and toolbox track
 # Note:
 #	Numpy metrics are ported from Matlab implementation provided by http://saliency.mit.edu/
@@ -43,11 +43,11 @@ class SineWeightMap():
 		self.height = height
 		self.WMap = np.sin(np.linspace(0, np.pi, self.height))
 		self.WMap = np.repeat(self.WMap[:, None], height*2, axis=1)
-		self.WMap[:] = 1 # Uniform weighting
+		# self.WMap[:] = 1 # Uniform weighting
 
 WeightMap = SineWeightMap()
 
-@numba.jit
+# @numba.jit
 def normalize(x, method='standard', axis=None):
 	"""Normalize data
 	`standard`: i.e. z-score. Substract mean and divide by standard deviation
@@ -80,7 +80,7 @@ def normalize(x, method='standard', axis=None):
 			raise ValueError('method not in {"standard", "range", "sum"}')
 	return res
 
-@numba.jit
+@numba.jit(forceobj=True)
 def KLD(p, q):
 	"""Weighted Kullback-Leibler Divergence
 
@@ -188,7 +188,7 @@ def NSS(saliency_map, fixation_map):
 	# Mean saliency value at fixation locations
 	return np.mean(s_map[f_map])
 
-@numba.jit
+@numba.jit(forceobj=True)
 def CC(saliency_map1, saliency_map2):
 	"""Weighted Cross-Correlation (Pearson's linear coefficient)
 	from statsmodels.stats.weightstats import DescrStatsW (method "corrcoef").
@@ -206,7 +206,7 @@ def CC(saliency_map1, saliency_map2):
 	# Compute correlation coefficient
 	return DescrStatsW(np.concatenate([map1.ravel()[:, None], map2.ravel()[:, None]], axis=1), weights=wmap.ravel()).corrcoef[0, 1]
 
-@numba.jit
+@numba.jit(forceobj=True)
 def SIM(saliency_map1, saliency_map2):
 	"""SIMilarity measure (aka histogram intersection)
 	"""
