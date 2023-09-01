@@ -113,7 +113,7 @@ I usually use a Conda environment like so:
 conda create -n salient360 python=3.8
 conda activate salient360
 
-conda install scipy=1.5.2 numpy=1.19.2 matplotlib=3.3.2 pyopengl=3.1.1a1 numba=0.51.2 scikit-image=0.17.2 statsmodels=0.12.1
+pip install scipy==1.5.2 numpy==1.19.2 matplotlib==3.3.2 pyopengl==3.1.1a1 numba==0.51.2 scikit-image==0.17.2 statsmodels==0.12.1
 
 pip install opencv-python==4.2.0.32 numpy-quaternion==2020.11.2.17.0.49 PyQt5==5.11.3
 ```
