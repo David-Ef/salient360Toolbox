@@ -46,8 +46,8 @@ def getGaussianSupport(dim, pos, gauss_sigma):
 	Sx = min(dim[1],
 			int(dim[1] *
 					(
-						1 - np.sin(pos[1] * np.pi) +
-						np.sin(gauss_sigma*1.5)
+						(1+np.tan( np.abs( pos[1] * np.pi - np.pi/2 ) ) ) *
+						(gauss_sigma*1.5)
 					)
 				)
 			)
