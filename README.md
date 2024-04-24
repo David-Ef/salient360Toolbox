@@ -156,7 +156,18 @@ You can download an example of such a video [here](/documentation/UserBehaviourE
 
 ## Cite
 
-* David, E., Gutiérrez, J., Võ, M. L.-H., Coutrot, A., Perreira Da Silva, M., & Le Callet, P. (2023). The Salient360! Toolbox: Processing, Visualising and Comparing Gaze Data in 3D. 2023 Symposium on Eye Tracking Research and Applications. Tubingen, Germany. [https://doi.org/10.1145/3588015.3588406](https://doi.org/10.1145/3588015.3588406
+* David, E., Gutiérrez, J., Võ, M. L. H., Coutrot, A., Perreira Da Silva, M., & Le Callet, P. (2024). The Salient360! toolbox: Handling gaze data in 3D made easy. Computers & Graphics, 103890. [https://doi.org/10.1016/j.cag.2024.103890](10.1145/3588015.3588406)
+
+```
+@article{david2024salient360,
+  title={The Salient360! toolbox: Handling gaze data in 3D made easy},
+  author={David, Erwan and Guti{\'e}rrez, Jes{\'u}s and V{\~o}, Melissa L{\`e}-Hoa and Coutrot, Antoine and Perreira Da Silva, Matthieu and Le Callet, Patrick},
+  journal={Computers \& Graphics},
+  pages={103890},
+  year={2024},
+  publisher={Elsevier}
+}
+```
 
 ## Acknowledgements
 
