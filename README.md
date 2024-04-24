@@ -156,7 +156,7 @@ You can download an example of such a video [here](/documentation/UserBehaviourE
 
 ## Cite
 
-* David, E., Gutiérrez, J., Võ, M. L. H., Coutrot, A., Perreira Da Silva, M., & Le Callet, P. (2024). The Salient360! toolbox: Handling gaze data in 3D made easy. Computers & Graphics, 103890. [https://doi.org/10.1016/j.cag.2024.103890](10.1145/3588015.3588406)
+* David, E., Gutiérrez, J., Võ, M. L. H., Coutrot, A., Perreira Da Silva, M., & Le Callet, P. (2024). The Salient360! toolbox: Handling gaze data in 3D made easy. Computers & Graphics, 103890. [10.1145/3588015.3588406](https://doi.org/10.1016/j.cag.2024.103890)
 
 ```
 @article{david2024salient360,
