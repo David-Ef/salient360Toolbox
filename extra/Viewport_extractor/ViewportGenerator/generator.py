@@ -8,6 +8,7 @@
 # ---------------------------------
 
 try:
+	import OpenGL
 	from OpenGL.GL import *
 	from OpenGL.GLU import *
 	from OpenGL.GLUT import *
@@ -35,7 +36,7 @@ class ViewportView:
 		camAngle=[np.pi, 0, np.pi],
 		angle_dim=[110, 110],
 		pixel_dim=[512, 512],
-		max_pix_dim=(3000, 1500)):
+		max_pix_dim=None):
 		
 		if path_img is not None:
 			ViewportView.BACKGROUND_IMAGE = path_img
@@ -55,7 +56,8 @@ class ViewportView:
 		self.angleSpan = np.array(angle_dim)
 
 		self.backgroundImageData = cv2.imread(ViewportView.BACKGROUND_IMAGE)[:,:,[2,1,0]]
-		self.backgroundImageData = cv2.resize(self.backgroundImageData, max_pix_dim)
+		if max_pix_dim is not None:
+			self.backgroundImageData = cv2.resize(self.backgroundImageData, max_pix_dim, cv2.INTER_CUBIC)
 
 		dim = self.backgroundImageData.shape
 		self.backgroundImageData = self.backgroundImageData.reshape([dim[1], dim[0], dim[2]])
@@ -128,15 +130,15 @@ class ViewportView:
 
 	def init_texture(self):
 		glBindTexture(GL_TEXTURE_2D, self.backgroundTextureRef)
-		# glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
-		# glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR)
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR)
 		glPixelStorei(GL_UNPACK_ALIGNMENT, 1)
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP)
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP)
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT)
 		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT)
-		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST)
-		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST)
+		# glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST)
+		# glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST)
 		glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_DECAL)
 
 		dim = self.backgroundImageData.shape[:2]
